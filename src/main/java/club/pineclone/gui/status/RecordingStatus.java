@@ -1,8 +1,8 @@
 package club.pineclone.gui.status;
 
 import club.pineclone.concurrent.GuiThreadPool;
-import club.pineclone.gui.Context;
-import club.pineclone.gui.LaunchPanel;
+import club.pineclone.gui.LaunchContext;
+import club.pineclone.gui.MainFrame;
 import club.pineclone.utils.i18n.LocTag;
 import club.pineclone.utils.i18n.LocaleUtils;
 
@@ -19,7 +19,7 @@ public class RecordingStatus implements ImitStatus {
     }
 
     @Override
-    public void prep(Context ctx) {
+    public void prep(LaunchContext ctx) {
         ctx.resetAllButs(
                 false,
                 true,
@@ -30,9 +30,9 @@ public class RecordingStatus implements ImitStatus {
     }
 
     @Override
-    public void exec(Context ctx) {
+    public void exec(LaunchContext ctx) {
         future = CompletableFuture.runAsync(() -> {
-            LaunchPanel mainFr = ctx.getImitFrame();
+            MainFrame mainFr = ctx.getImitFrame();
             if (mainFr.allowBeep()) Toolkit.getDefaultToolkit().beep();
             mainFr.perform(LocaleUtils.loc(LocTag.RECORDING_STATUS_LAUNCH_MONITOR)
                     + ctx.getProcessor().getMonitorName());
@@ -42,8 +42,8 @@ public class RecordingStatus implements ImitStatus {
     }
 
     @Override
-    public void stop(Context ctx) {
-        LaunchPanel mainFrame = ctx.getImitFrame();
+    public void stop(LaunchContext ctx) {
+        MainFrame mainFrame = ctx.getImitFrame();
         if (future != null) {
             future.cancel(true);
             mainFrame.perform(LocaleUtils

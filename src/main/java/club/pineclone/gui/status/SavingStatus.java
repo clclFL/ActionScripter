@@ -1,7 +1,7 @@
 package club.pineclone.gui.status;
 
-import club.pineclone.gui.Context;
-import club.pineclone.gui.LaunchPanel;
+import club.pineclone.gui.LaunchContext;
+import club.pineclone.gui.MainFrame;
 import club.pineclone.process.Processor;
 import club.pineclone.utils.FileUtils;
 import club.pineclone.utils.i18n.LocTag;
@@ -18,15 +18,15 @@ public class SavingStatus implements ImitStatus {
     }
 
     @Override
-    public void prep(Context ctx) {
+    public void prep(LaunchContext ctx) {
         ctx.resetAllButs(
                 false , false , false , false , false , false
         );
     }
 
     @Override
-    public void exec(Context ctx) {
-            LaunchPanel mainFr = ctx.getImitFrame();
+    public void exec(LaunchContext ctx) {
+            MainFrame mainFr = ctx.getImitFrame();
 //            SimpleMonitor monitor = ctx.getMonitor();
             Processor imitater = ctx.getProcessor();
 
@@ -57,7 +57,7 @@ public class SavingStatus implements ImitStatus {
     }
 
     @Override
-    public void stop(Context ctx) {
+    public void stop(LaunchContext ctx) {
 
     }
 }

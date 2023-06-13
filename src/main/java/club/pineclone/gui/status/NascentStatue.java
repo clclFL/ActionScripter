@@ -1,6 +1,6 @@
 package club.pineclone.gui.status;
 
-import club.pineclone.gui.Context;
+import club.pineclone.gui.LaunchContext;
 
 public class NascentStatue implements ImitStatus {
 
@@ -10,7 +10,7 @@ public class NascentStatue implements ImitStatus {
     }
 
     @Override
-    public void prep(Context ctx) {
+    public void prep(LaunchContext ctx) {
         boolean isSavable = ctx.getProcessor().isSavable();
         boolean isExecutable = ctx.getProcessor().isExecutable();
 
@@ -23,12 +23,12 @@ public class NascentStatue implements ImitStatus {
     }
 
     @Override
-    public void exec(Context ctx) {
+    public void exec(LaunchContext ctx) {
         //void
     }
 
     @Override
-    public void stop(Context ctx) {
+    public void stop(LaunchContext ctx) {
         //void
     }
 }

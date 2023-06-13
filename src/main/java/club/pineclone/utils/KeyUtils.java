@@ -446,8 +446,8 @@ public class KeyUtils {
             frame.setResizable(false);
 
             frame.add(pictureLabel, BorderLayout.CENTER);
-            JButton launchAdapter = new JButton("Launch KeyAdapter");
-            JButton launchNative = new JButton("Launch Native");
+            JButton launchAdapter = new JButton("LaunchPanel KeyAdapter");
+            JButton launchNative = new JButton("LaunchPanel Native");
             JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 5, 1));
             buttonPanel.add(launchAdapter);
             buttonPanel.add(launchNative);

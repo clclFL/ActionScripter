@@ -13,9 +13,9 @@ import java.util.List;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Context {
+public class LaunchContext {
 
-    private final LaunchPanel launchPanel;
+    private final MainFrame launchPanel;
 
     private final PropertyChangeEventDispatcher dispatcher;
     private final Processor processor;
@@ -26,7 +26,7 @@ public class Context {
 
     private ImitStatus status;
 
-    public Context(LaunchPanel parent) throws AWTException {
+    public LaunchContext(MainFrame parent) throws AWTException {
         this.dispatcher = new PropertyChangeEventDispatcher();
         this.processor = new ProcessorImpl();
         this.hotkeyListener = new GlobalListener();
@@ -41,7 +41,7 @@ public class Context {
         return hotkeyListener;
     }
 
-    public LaunchPanel getImitFrame() {
+    public MainFrame getImitFrame() {
         return launchPanel;
     }
 
@@ -71,7 +71,7 @@ public class Context {
         status.prep(this);
     }
 
-    public void setStop(CallBack<Context> callBack) {
+    public void setStop(CallBack<LaunchContext> callBack) {
         callBack.callBack(this);
         status.stop(this);
     }

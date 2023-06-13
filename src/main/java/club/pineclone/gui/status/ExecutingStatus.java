@@ -2,8 +2,8 @@ package club.pineclone.gui.status;
 
 import club.pineclone.api.CallBack;
 import club.pineclone.concurrent.GuiThreadPool;
-import club.pineclone.gui.Context;
-import club.pineclone.gui.LaunchPanel;
+import club.pineclone.gui.LaunchContext;
+import club.pineclone.gui.MainFrame;
 import club.pineclone.gui.swing.VFlowLayout;
 import club.pineclone.process.Processor;
 import club.pineclone.process.ProcessorImpl;
@@ -37,7 +37,7 @@ public class ExecutingStatus implements ImitStatus {
     }
 
     @Override
-    public void prep(Context ctx) {
+    public void prep(LaunchContext ctx) {
         ctx.resetAllButs(false,
                 true,
                 false,
@@ -47,8 +47,8 @@ public class ExecutingStatus implements ImitStatus {
     }
 
     @Override
-    public void exec(Context ctx) {
-        LaunchPanel mainFrame = ctx.getImitFrame();
+    public void exec(LaunchContext ctx) {
+        MainFrame mainFrame = ctx.getImitFrame();
         Processor imitater = ctx.getProcessor();
 
         JDialog dialog = new JDialog(mainFrame, LocaleUtils.loc(LocTag.EXECUTING_STATUS_CONFIG_DIALOG_TITLE), true);
@@ -312,9 +312,9 @@ public class ExecutingStatus implements ImitStatus {
 
 
     @Override
-    public void stop(Context ctx) {
+    public void stop(LaunchContext ctx) {
         Processor imitater = ctx.getProcessor();
-        LaunchPanel mainFrame = ctx.getImitFrame();
+        MainFrame mainFrame = ctx.getImitFrame();
         if (future != null ) {
             future.cancel(true);
             mainFrame.perform(LocaleUtils.loc(LocTag.EXECUTING_STATUS_SET_STOP_PERFORM_1));
