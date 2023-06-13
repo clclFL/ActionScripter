@@ -5,8 +5,8 @@ import club.pineclone.gui.event.PropertyChangeEventDispatcher;
 import club.pineclone.gui.status.*;
 import club.pineclone.gui.swing.VFlowLayout;
 import club.pineclone.utils.*;
-import club.pineclone.utils.l10n.LocTag;
-import club.pineclone.utils.l10n.LocaleUtils;
+import club.pineclone.utils.i18n.LocTag;
+import club.pineclone.utils.i18n.LocaleUtils;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;

@@ -9,8 +9,8 @@ import club.pineclone.process.Processor;
 import club.pineclone.process.ProcessorImpl;
 import club.pineclone.utils.FileUtils;
 import club.pineclone.utils.GuiUtils;
-import club.pineclone.utils.l10n.LocTag;
-import club.pineclone.utils.l10n.LocaleUtils;
+import club.pineclone.utils.i18n.LocTag;
+import club.pineclone.utils.i18n.LocaleUtils;
 
 import javax.swing.*;
 import javax.swing.text.AbstractDocument;

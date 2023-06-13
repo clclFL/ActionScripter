@@ -4,8 +4,8 @@ import club.pineclone.gui.Context;
 import club.pineclone.gui.LaunchPanel;
 import club.pineclone.process.Processor;
 import club.pineclone.utils.FileUtils;
-import club.pineclone.utils.l10n.LocTag;
-import club.pineclone.utils.l10n.LocaleUtils;
+import club.pineclone.utils.i18n.LocTag;
+import club.pineclone.utils.i18n.LocaleUtils;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;

@@ -3,8 +3,8 @@ package club.pineclone.gui.status;
 import club.pineclone.concurrent.GuiThreadPool;
 import club.pineclone.gui.Context;
 import club.pineclone.gui.LaunchPanel;
-import club.pineclone.utils.l10n.LocTag;
-import club.pineclone.utils.l10n.LocaleUtils;
+import club.pineclone.utils.i18n.LocTag;
+import club.pineclone.utils.i18n.LocaleUtils;
 
 import java.awt.*;
 import java.util.concurrent.CompletableFuture;

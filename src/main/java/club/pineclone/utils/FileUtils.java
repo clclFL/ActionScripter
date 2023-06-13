@@ -1,7 +1,7 @@
 package club.pineclone.utils;
 
 import club.pineclone.gui.status.ExecutingStatus;
-import club.pineclone.utils.l10n.LocaleUtils;
+import club.pineclone.utils.i18n.LocaleUtils;
 
 import java.io.*;
 import java.util.HashMap;

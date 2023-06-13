@@ -1,4 +1,4 @@
-package club.pineclone.utils.l10n;
+package club.pineclone.utils.i18n;
 
 import club.pineclone.utils.Log;
 

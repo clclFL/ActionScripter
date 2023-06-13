@@ -4,8 +4,8 @@ import club.pineclone.concurrent.GuiThreadPool;
 import club.pineclone.gui.Context;
 import club.pineclone.gui.LaunchPanel;
 import club.pineclone.utils.FileUtils;
-import club.pineclone.utils.l10n.LocTag;
-import club.pineclone.utils.l10n.LocaleUtils;
+import club.pineclone.utils.i18n.LocTag;
+import club.pineclone.utils.i18n.LocaleUtils;
 
 import java.util.Timer;
 import java.util.TimerTask;
