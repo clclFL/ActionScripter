@@ -1,7 +1,7 @@
 package club.pineclone.process.action;
 
 import club.pineclone.api.CallBack;
-import club.pineclone.process.action.interfaces.RobotAction;
+import club.pineclone.process.api.RobotAction;
 
 import java.awt.*;
 import java.util.LinkedList;

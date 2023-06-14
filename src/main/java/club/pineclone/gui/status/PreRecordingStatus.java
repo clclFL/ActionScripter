@@ -1,8 +1,8 @@
 package club.pineclone.gui.status;
 
 import club.pineclone.concurrent.GuiThreadPool;
-import club.pineclone.gui.LaunchContext;
-import club.pineclone.gui.MainFrame;
+import club.pineclone.gui.context.LaunchPanelCtx;
+import club.pineclone.gui.functionalPanel.LaunchPanel;
 import club.pineclone.utils.FileUtils;
 import club.pineclone.utils.i18n.LocTag;
 import club.pineclone.utils.i18n.LocaleUtils;
@@ -23,7 +23,7 @@ public class PreRecordingStatus implements ImitStatus {
     }
 
     @Override
-    public void prep(LaunchContext ctx) {
+    public void prep(LaunchPanelCtx ctx) {
         ctx.resetAllButs(false,
                 true,
                 false,
@@ -33,10 +33,10 @@ public class PreRecordingStatus implements ImitStatus {
     }
 
     @Override
-    public void exec(LaunchContext ctx) {
+    public void exec(LaunchPanelCtx ctx) {
         future = CompletableFuture.runAsync(() -> {
 
-            MainFrame mainFr = ctx.getImitFrame();
+            LaunchPanel mainFr = ctx.getImitFrame();
             int beginDelay = Integer.parseInt(FileUtils.getSysBundle()
                     .getProp(FileUtils.SysTag.START_DELAY.name()));
 
@@ -60,7 +60,7 @@ public class PreRecordingStatus implements ImitStatus {
     }
 
     @Override
-    public void stop(LaunchContext ctx) {
+    public void stop(LaunchPanelCtx ctx) {
         if (future != null) future.cancel(true);
         if (task != null) task.cancel();
         ctx.getImitFrame().perform(LocaleUtils

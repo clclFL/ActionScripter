@@ -1,16 +1,16 @@
 package club.pineclone.gui.status;
 
-import club.pineclone.gui.LaunchContext;
+import club.pineclone.gui.context.LaunchPanelCtx;
 
 public interface ImitStatus {
 
     String getDesc();
 
-    void prep(LaunchContext ctx);
+    void prep(LaunchPanelCtx ctx);
 
-    void exec(LaunchContext ctx);
+    void exec(LaunchPanelCtx ctx);
 
-    void stop(LaunchContext ctx);
+    void stop(LaunchPanelCtx ctx);
 
     enum EnumStatus {
         NASCENT, PRE_RECORDING, RECORDING,

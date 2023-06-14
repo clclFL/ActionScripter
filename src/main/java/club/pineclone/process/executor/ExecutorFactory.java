@@ -1,9 +1,6 @@
 package club.pineclone.process.executor;
 
-import club.pineclone.process.executor.impl.ExecutorImpl;
-import club.pineclone.process.executor.impl.KeyExecutorImpl;
-import club.pineclone.process.executor.impl.MouseExecutorImpl;
-import club.pineclone.process.executor.interfaces.Executor;
+import club.pineclone.process.api.Executor;
 
 import java.awt.*;
 

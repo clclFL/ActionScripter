@@ -1,6 +1,6 @@
 package club.pineclone.process.action;
 
-import club.pineclone.process.action.interfaces.RobotAction;
+import club.pineclone.process.api.RobotAction;
 import club.pineclone.utils.Log;
 
 import java.io.*;

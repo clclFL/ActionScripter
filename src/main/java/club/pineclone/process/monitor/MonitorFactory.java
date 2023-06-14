@@ -1,10 +1,6 @@
 package club.pineclone.process.monitor;
 
-import club.pineclone.process.monitor.impl.KeyActionMonitorImpl;
-import club.pineclone.process.monitor.impl.MonitorImpl;
-import club.pineclone.process.monitor.impl.MouseActionMonitorImpl;
-import club.pineclone.process.monitor.impl.MouseMotionMonitorImpl;
-import club.pineclone.process.monitor.interfaces.Monitor;
+import club.pineclone.process.api.Monitor;
 
 public final class MonitorFactory {
 

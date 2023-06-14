@@ -1,6 +1,6 @@
 package club.pineclone;
 
-import club.pineclone.gui.MainFrame;
+import club.pineclone.gui.functionalPanel.LaunchPanel;
 import club.pineclone.utils.Log;
 
 import javax.swing.*;
@@ -19,7 +19,7 @@ public class Main {
             }
 
             try {
-                MainFrame _mainFrame = new MainFrame();
+                LaunchPanel _mainFrame = new LaunchPanel();
                 SwingUtilities.invokeLater(() -> _mainFrame.setVisible(true));
             } catch (AWTException e) {
                 throw new RuntimeException(e);

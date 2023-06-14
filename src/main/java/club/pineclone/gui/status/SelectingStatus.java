@@ -1,7 +1,7 @@
 package club.pineclone.gui.status;
 
-import club.pineclone.gui.LaunchContext;
-import club.pineclone.gui.MainFrame;
+import club.pineclone.gui.context.LaunchPanelCtx;
+import club.pineclone.gui.functionalPanel.LaunchPanel;
 import club.pineclone.process.Processor;
 import club.pineclone.utils.FileUtils;
 import club.pineclone.utils.i18n.LocTag;
@@ -18,7 +18,7 @@ public class SelectingStatus implements ImitStatus {
         return "selecting status";
     }
 
-    public void prep(LaunchContext ctx) {
+    public void prep(LaunchPanelCtx ctx) {
         boolean isExecutable = ctx.getProcessor().isExecutable();
         ctx.resetAllButs(
                 false,
@@ -30,8 +30,8 @@ public class SelectingStatus implements ImitStatus {
     }
 
     @Override
-    public void exec(LaunchContext ctx) {
-        MainFrame mainFr = ctx.getImitFrame();
+    public void exec(LaunchPanelCtx ctx) {
+        LaunchPanel mainFr = ctx.getImitFrame();
         Processor imitater = ctx.getProcessor();
 
         JFileChooser fileChooser = new JFileChooser();
@@ -61,7 +61,7 @@ public class SelectingStatus implements ImitStatus {
     }
 
     @Override
-    public void stop(LaunchContext ctx) {
+    public void stop(LaunchPanelCtx ctx) {
 
     }
 }

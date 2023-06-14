@@ -1,8 +1,8 @@
 package club.pineclone.gui.status;
 
 import club.pineclone.concurrent.GuiThreadPool;
-import club.pineclone.gui.LaunchContext;
-import club.pineclone.gui.MainFrame;
+import club.pineclone.gui.context.LaunchPanelCtx;
+import club.pineclone.gui.functionalPanel.LaunchPanel;
 import club.pineclone.process.Processor;
 import club.pineclone.utils.i18n.LocTag;
 import club.pineclone.utils.i18n.LocaleUtils;
@@ -17,14 +17,14 @@ public class SubmittingStatus implements ImitStatus {
     }
 
     @Override
-    public void prep(LaunchContext ctx) {
+    public void prep(LaunchPanelCtx ctx) {
         ctx.resetAllButs(false , false , false , false , false , false);
     }
 
     @Override
-    public void exec(LaunchContext ctx) {
+    public void exec(LaunchPanelCtx ctx) {
         CompletableFuture.runAsync(() -> {
-            MainFrame mainFr = ctx.getImitFrame();
+            LaunchPanel mainFr = ctx.getImitFrame();
             Processor imitater = ctx.getProcessor();
             mainFr.perform(LocaleUtils
                     .loc(LocTag.SUBMITTING_STATUS_TRYING_SUBMITTING_PERFORM));
@@ -42,7 +42,7 @@ public class SubmittingStatus implements ImitStatus {
     }
 
     @Override
-    public void stop(LaunchContext ctx) {
+    public void stop(LaunchPanelCtx ctx) {
 
     }
 }
